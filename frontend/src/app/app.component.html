@@ -1,0 +1,27 @@
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">◆</span>
+      <div class="titles">
+        <h1>DishDash</h1>
+        <p>Kitchen order tracking</p>
+      </div>
+    </div>
+    <app-stats-bar [stats]="stats"></app-stats-bar>
+  </header>
+
+  <section class="toolbar">
+    <label class="filter">
+      <span class="filter-label">Filter by status</span>
+      <select [value]="statusFilter" (change)="onFilterChange($any($event.target).value)">
+        <option *ngFor="let f of filters" [value]="f">{{ f }}</option>
+      </select>
+    </label>
+    <span class="count">{{ visibleOrders.length }} orders</span>
+  </section>
+
+  <app-order-list
+    [orders]="visibleOrders"
+    (statusChanged)="onStatusChanged($event)"
+  ></app-order-list>
+</div>
