@@ -8,7 +8,7 @@ Two services: a **Spring Boot** API (`/backend`) and an **Angular** dashboard (`
 
 ## Prerequisites
 
-- **JDK 17** (`java -version`)
+- **JDK 21** (`java -version`)
 - **Node 20+** (`node --version`)
 
 No Docker, no database to install — the backend uses an in-memory H2 database that is
